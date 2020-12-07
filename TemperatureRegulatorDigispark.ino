@@ -34,6 +34,9 @@ float _tempReadings2[TEMP_READINGS] = {};
 
 void setup(void)
 {
+  //Arduino Nano set max frequency to avoid pwm noise
+  //TCCR2B = TCCR2B & B11111000 | B00000001;
+	
   //Digispark set max frequency to avoid pwm noise
   TCCR0B = TCCR0B & 0b11111000 | 0b001;
   
